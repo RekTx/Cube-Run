@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Player.h"
+#include "Map.h"
 
 class Game {
 
@@ -8,15 +9,19 @@ private:
 
 	const int screenWidth;
 	const int screenHeight;
+	int score;
+
 	bool gameOver;
 	bool pause;
-	int score;
+	bool levelEnd;
+	
 	Camera3D camera = { 0 };
 
-	Vector3 groundCenterPos = { 0.0f, -1.0f, -40.0f };
-	Vector2 groundSize = { 20.0f, 100.0f };
+	Vector3 groundCenterPos = { 0.0f, -0.5f, -40.0f };
+	Vector2 groundSize = { 16.0f, 550.0f };
 
 	Player player;
+	Map *currentMap;
 
 public:
 
